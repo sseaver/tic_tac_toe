@@ -1,0 +1,17 @@
+Make the board for tic-tac-toe
+  0   1   2
+0  []| []| []
+  ---+---+---
+1  []| []| []
+  ---+---+---
+2  []| []| []
+
+Ask user for location input
+
+Place input (x) in correct board location in game_matrix
+update board
+
+Ask next user for location input
+
+Place input (o) in correct board location in game_matrix
+update board
