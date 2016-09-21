@@ -12,13 +12,16 @@ def winning():
     column_two = [row[2] for row in game_matrix]
 
     if column_zero == win_conditions_x or column_zero == win_conditions_o:
-        return False
-    elif column_one == win_conditions_x or column_one == win_conditions_o:
-        return False
-    elif column_two == win_conditions_x or column_two == win_conditions_o:
-        return False
-    else:
+        print ("Congrats! You win!")
         return True
+    elif column_one == win_conditions_x or column_one == win_conditions_o:
+        print ("Congrats! You win!")
+        return True
+    elif column_two == win_conditions_x or column_two == win_conditions_o:
+        print ("Congrats! You win!")
+        return True
+    else:
+        return False
 
 def x_move(row, column):
     game_matrix[row][column] = "X"
@@ -37,14 +40,16 @@ def draw_board(game_matrix):
 
 draw_board(game_matrix)
 print ("X goes first!")
-
+# valid_input = [0, 1, 2]
+# valid answers and end of game ######
 while True:
     print ("Pick a coordinate to place your 'X'")
     x_move(int(input("Row: ")), int(input("Column: ")))
     draw_board(game_matrix)
-    winning()
+    if winning():
+        break
     print ("Pick a coordinate to place your 'O'")
     o_move(int(input("Row: ")), int(input("Column: ")))
     draw_board(game_matrix)
-    winning()
-    
+    if winning():
+        break
