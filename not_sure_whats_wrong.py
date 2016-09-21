@@ -8,11 +8,12 @@ win_conditions_o = ["O", "O", "O"]
 valid_input = ["0", "1", "2"]
 
 
+
 def game_over():
     column_zero = [row[0] for row in game_matrix]
     column_one = [row[1] for row in game_matrix]
     column_two = [row[2] for row in game_matrix]
-    columns = [column_zero, column_one, column_two]
+    columns = [column_one, column_zero, column_two]
     diagonal_up = [game_matrix[2][0], game_matrix[1][1], game_matrix[0][2]]
     diagonal_down = [game_matrix[0][0], game_matrix[1][1], game_matrix[2][2]]
     diagonal_wins = [diagonal_up, diagonal_down]
@@ -28,7 +29,6 @@ def game_over():
         if diagonal == win_conditions_o or diagonal == win_conditions_x:
             print ("Congrats! You win!")
             return True
-
 
 def move(game_matrix, player):
     print ("Pick a coordinate to place your {}".format(player))
